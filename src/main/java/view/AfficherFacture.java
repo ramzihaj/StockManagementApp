@@ -670,7 +670,7 @@ public class AfficherFacture extends javax.swing.JFrame {
                 // Exécuter la requête
                 int rowsInserted = pst.executeUpdate();
                 if (rowsInserted > 0) {
-                    JOptionPane.showMessageDialog(this, "Facture vente ajoutée avec succès !");
+                    JOptionPane.showMessageDialog(this, "Facture Vente ajoutée avec succès !");
                 } else {
                     JOptionPane.showMessageDialog(this, "Erreur lors de l'ajout de la facture.", "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
