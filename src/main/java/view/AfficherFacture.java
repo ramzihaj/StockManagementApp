@@ -538,87 +538,57 @@ public class AfficherFacture extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExit1ActionPerformed
 
     private void jButtonRefresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefresh1ActionPerformed
-         try {
-            String url = "jdbc:mysql://localhost:3306/stock_manager";
-            String login = "root";
-            String pwd = "";
+      try {
+    String url = "jdbc:mysql://localhost:3306/stock_manager";
+    String login = "root";
+    String pwd = "";
 
-            // Étape 1 : Charger le pilote JDBC
-            Class.forName("com.mysql.jdbc.Driver");
+    // Load the MySQL JDBC Driver
+    Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Étape 2 : Établir la connexion
-            Connection conn = DriverManager.getConnection(url, login, pwd);
-            System.out.println("Connexion réussie");
+    // Establish the connection
+    try (Connection conn = DriverManager.getConnection(url, login, pwd)) {
+        System.out.println("Connexion réussie");
 
-            // Étape 3 : Exécuter la requête
-            String query = "SELECT  nomClient , adresseclient  FROM client";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+        // Query for client data
+        String clientQuery = "SELECT nomClient, adresseclient FROM client";
+        String factureQuery = "SELECT numfact, date, numLigne, nomArt, libelle, prixU, qte, prixT FROM facture";
 
-            // Étape 4 : Ajouter les données au modèle de table
-            while (rs.next()) {
-               
-                String nomCli = rs.getString("nomClient");
-                String adresseCli = rs.getString("adresseclient");
-               
-                
-                DefaultTableModel model = (DefaultTableModel) jTableClient.getModel();
-                model.addRow(new Object[]{ nomCli, adresseCli });
+        try (Statement stmt = conn.createStatement()) {
+            // Execute client query
+            try (ResultSet rsClient = stmt.executeQuery(clientQuery)) {
+                DefaultTableModel clientModel = (DefaultTableModel) jTableLigneFacture1.getModel();
+                while (rsClient.next()) {
+                    String nomClient = rsClient.getString("nomClient");
+                    String adresseClient = rsClient.getString("adresseclient");
+                    clientModel.addRow(new Object[]{nomClient, adresseClient});
+                }
             }
 
-            // Fermer les ressources
-            rs.close();
-            st.close();
-            conn.close();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
+            // Execute facture query
+            try (ResultSet rsFacture = stmt.executeQuery(factureQuery)) {
+                DefaultTableModel factureModel = (DefaultTableModel) jTableClient.getModel();
+                while (rsFacture.next()) {
+                    String numFact = rsFacture.getString("numfact");
+                    String date = rsFacture.getString("date");
+                    String numLigne = rsFacture.getString("numLigne");
+                    String nomArt = rsFacture.getString("nomArt");
+                    String libelle = rsFacture.getString("libelle");
+                    String prixU = rsFacture.getString("prixU");
+                    String qte = rsFacture.getString("qte");
+                    String prixT = rsFacture.getString("prixT");
+                    factureModel.addRow(new Object[]{numFact, date, numLigne, nomArt, libelle, prixU, qte, prixT});
+                }
+            }
         }
-         
-           try {
-            String url = "jdbc:mysql://localhost:3306/stock_manager";
-            String login = "root";
-            String pwd = "";
+    }
+} catch (ClassNotFoundException ex) {
+    Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, "Driver not found", ex);
+} catch (SQLException ex) {
+    Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, "Database error", ex);
+}
 
-            // Étape 1 : Charger le pilote JDBC
-            Class.forName("com.mysql.jdbc.Driver");
-
-            // Étape 2 : Établir la connexion
-            Connection conn = DriverManager.getConnection(url, login, pwd);
            
-
-            // Étape 3 : Exécuter la requête
-            String query = "SELECT numfact, date, numLigne, nomArt, libelle, prixU, qte, prixT FROM facture";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            // Étape 4 : Ajouter les données au modèle de table
-            while (rs.next()) {
-               
-                String numfact = rs.getString("numfact");
-                String date = rs.getString("date");
-                String numLigne = rs.getString("numLigne");
-                String nomArt = rs.getString("nomArt");
-                String libelle = rs.getString("libelle");
-                String prixU = rs.getString("prixU");
-                String qte = rs.getString("qte");
-                String prixT = rs.getString("prixT");
-               
-                
-                DefaultTableModel model = (DefaultTableModel) jTableClient.getModel();
-                model.addRow(new Object[]{ numfact, date, numLigne, nomArt, libelle, prixU, qte, prixT  });
-            }
-
-            // Fermer les ressources
-            rs.close();
-            st.close();
-            conn.close();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_jButtonRefresh1ActionPerformed
 
     private void jButtonValiderFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderFVActionPerformed
