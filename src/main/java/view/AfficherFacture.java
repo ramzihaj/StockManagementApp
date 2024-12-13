@@ -31,6 +31,10 @@ public class AfficherFacture extends javax.swing.JFrame {
     public AfficherFacture() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        ButtonGroup1 group = new ButtonGroup1();
+        group.add(jRadioButtonFactVente);
+        group.add(jRadioButtonFactAchat);
     }
 
     /**
@@ -42,6 +46,7 @@ public class AfficherFacture extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -74,6 +79,30 @@ public class AfficherFacture extends javax.swing.JFrame {
         jButtonValiderFV = new javax.swing.JButton();
         jButtonExitFV = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableFournisseur1 = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTableLigneFacture2 = new javax.swing.JTable();
+        jButtonRefreshFour = new javax.swing.JButton();
+        jButtonValiderFA1 = new javax.swing.JButton();
+        jButtonExitFV1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jButtonVoirTousFacture = new javax.swing.JButton();
+        jRadioButtonFactVente = new javax.swing.JRadioButton();
+        jRadioButtonFactAchat = new javax.swing.JRadioButton();
+        jTextFieldNumFactureAfficher = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanelFactureVente = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTableFactureAffiVente = new javax.swing.JTable();
+        jButtonExit3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +120,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1321, Short.MAX_VALUE)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -227,7 +256,7 @@ public class AfficherFacture extends javax.swing.JFrame {
                                         .addGap(33, 33, 33)))))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel11)
@@ -261,7 +290,7 @@ public class AfficherFacture extends javax.swing.JFrame {
                             .addComponent(jButtonAnnulerFact)
                             .addComponent(jButtonValiderFact)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ajouter une Facture", jPanel3);
@@ -337,7 +366,7 @@ public class AfficherFacture extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,8 +375,7 @@ public class AfficherFacture extends javax.swing.JFrame {
                         .addGap(312, 312, 312)
                         .addComponent(jButtonRefresh1)
                         .addGap(45, 45, 45)
-                        .addComponent(jButtonValiderFV)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButtonValiderFV)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonExitFV)
                 .addGap(47, 47, 47))
@@ -379,25 +407,272 @@ public class AfficherFacture extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Ajouter une Facture de vente", jPanel4);
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Sélectionnez le fournisseur pour lequel afficher la facture");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("Fournisseur");
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("Facture");
+
+        jTableFournisseur1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nom Fournisseur", "Adresse Fournisseur"
+            }
+        ));
+        jScrollPane3.setViewportView(jTableFournisseur1);
+
+        jTableLigneFacture2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Num Facture", "Date", "NumLigne", "Numarticle", "Libelle", "PrixU", "Qte", "PrixT"
+            }
+        ));
+        jScrollPane5.setViewportView(jTableLigneFacture2);
+
+        jButtonRefreshFour.setText("Refresh 🔍");
+        jButtonRefreshFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRefreshFourActionPerformed(evt);
+            }
+        });
+
+        jButtonValiderFA1.setText("Valider");
+        jButtonValiderFA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonValiderFA1ActionPerformed(evt);
+            }
+        });
+
+        jButtonExitFV1.setText("Exit");
+        jButtonExitFV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExitFV1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5))
+                .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(312, 312, 312)
+                .addComponent(jButtonRefreshFour)
+                .addGap(45, 45, 45)
+                .addComponent(jButtonValiderFA1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addComponent(jButtonExitFV1)
+                .addGap(47, 47, 47))
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonRefreshFour)
+                    .addComponent(jButtonValiderFA1)
+                    .addComponent(jButtonExitFV1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 834, Short.MAX_VALUE)
+            .addGap(0, 1321, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 243, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 244, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 532, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Ajouter une Facture d'achat", jPanel5);
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Sélectionner le type de facture ");
+
+        jButtonVoirTousFacture.setBackground(new java.awt.Color(102, 255, 102));
+        jButtonVoirTousFacture.setText("Voir");
+        jButtonVoirTousFacture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoirTousFactureActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonFactVente.setText("Facture de Vente");
+
+        jRadioButtonFactAchat.setText("Facture d'Achat");
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel15.setText("Type de Facture");
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel16.setText("Numero Facture");
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Facture de vente");
+
+        jTableFactureAffiVente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID_FactVente", "Nom Client", "Adresse ", "Numero Facture", "Date", "Num Ligne", "Num Article", "Libelle", "Prix Unitaire", "Qte", "Prix Totale"
+            }
+        ));
+        jScrollPane6.setViewportView(jTableFactureAffiVente);
+
+        javax.swing.GroupLayout jPanelFactureVenteLayout = new javax.swing.GroupLayout(jPanelFactureVente);
+        jPanelFactureVente.setLayout(jPanelFactureVenteLayout);
+        jPanelFactureVenteLayout.setHorizontalGroup(
+            jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelFactureVenteLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanelFactureVenteLayout.setVerticalGroup(
+            jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFactureVenteLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel17)
+                .addContainerGap(393, Short.MAX_VALUE))
+            .addGroup(jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFactureVenteLayout.createSequentialGroup()
+                    .addContainerGap(53, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jButtonExit3.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonExit3.setText("Exit");
+        jButtonExit3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExit3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRadioButtonFactVente)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextFieldNumFactureAfficher, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jRadioButtonFactAchat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(42, 42, 42)
+                        .addComponent(jPanelFactureVente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(jButtonVoirTousFacture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 750, Short.MAX_VALUE)
+                        .addComponent(jButtonExit3)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jRadioButtonFactVente)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButtonFactAchat))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldNumFactureAfficher, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonVoirTousFacture)
+                            .addComponent(jButtonExit3))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanelFactureVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Afficher Tous les factures", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1321, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -411,7 +686,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 407, Short.MAX_VALUE)))
+                    .addGap(0, 606, Short.MAX_VALUE)))
         );
 
         pack();
@@ -544,7 +819,7 @@ public class AfficherFacture extends javax.swing.JFrame {
     String pwd = "";
 
     // Load the MySQL JDBC Driver
-    Class.forName("com.mysql.cj.jdbc.Driver");
+    Class.forName("com.mysql.jdbc.Driver");
 
     // Establish the connection
     try (Connection conn = DriverManager.getConnection(url, login, pwd)) {
@@ -557,7 +832,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         try (Statement stmt = conn.createStatement()) {
             // Execute client query
             try (ResultSet rsClient = stmt.executeQuery(clientQuery)) {
-                DefaultTableModel clientModel = (DefaultTableModel) jTableLigneFacture1.getModel();
+                DefaultTableModel clientModel = (DefaultTableModel) jTableClient.getModel();
                 while (rsClient.next()) {
                     String nomClient = rsClient.getString("nomClient");
                     String adresseClient = rsClient.getString("adresseclient");
@@ -567,7 +842,7 @@ public class AfficherFacture extends javax.swing.JFrame {
 
             // Execute facture query
             try (ResultSet rsFacture = stmt.executeQuery(factureQuery)) {
-                DefaultTableModel factureModel = (DefaultTableModel) jTableClient.getModel();
+                DefaultTableModel factureModel = (DefaultTableModel) jTableLigneFacture1.getModel();
                 while (rsFacture.next()) {
                     String numFact = rsFacture.getString("numfact");
                     String date = rsFacture.getString("date");
@@ -592,42 +867,169 @@ public class AfficherFacture extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefresh1ActionPerformed
 
     private void jButtonValiderFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderFVActionPerformed
-        int selectedRow = (jTableLigneFacture1.getSelectedRow() & jTableClient.getSelectedRow() );
-        if (selectedRow != -1) {
-            // Récupérer le modèle de table
-            DefaultTableModel model = (DefaultTableModel) jTableLigneFacture1.getModel();
-            
+       int selectedRowClient = jTableClient.getSelectedRow();
+       int selectedRowFacture = jTableLigneFacture1.getSelectedRow();
 
-            // Récupérer les valeurs des colonnes de la ligne sélectionnée
-           
-            String numFact = model.getValueAt(selectedRow, 1).toString();  // Exemple pour la 2ème colonne
-            String dateF = model.getValueAt(selectedRow, 2).toString(); // Exemple pour la 3ème colonne
-            String numLigne = model.getValueAt(selectedRow, 3).toString(); // Exemple pour la 1ère colonne
-            String nomArt = model.getValueAt(selectedRow, 4).toString();  // Exemple pour la 2ème colonne
-            String libelle = model.getValueAt(selectedRow, 5).toString(); // Exemple pour la 3ème colonne
-            String prixU = model.getValueAt(selectedRow, 6).toString();   // Exemple pour la 4ème colonne
-            String qte = model.getValueAt(selectedRow, 7).toString();     // Exemple pour la 5ème colonne
-            String prixT = model.getValueAt(selectedRow, 8).toString();   // Exemple pour la 6ème colonne
-            
-            DefaultTableModel model2 = (DefaultTableModel) jTableClient.getModel();
-            
-            String nomClient = model2.getValueAt(selectedRow, 0).toString(); // Exemple pour la 1ère colonne
-            String adresseClient = model2.getValueAt(selectedRow, 1).toString();  // Exemple pour la 2ème colonne
-            // Connexion à la base de données
-            try {
-                String url = "jdbc:mysql://localhost:3306/stock_manager";
-                String login = "root";
-                String pwd = "";
-                Connection conn = DriverManager.getConnection(url, login, pwd);
+    // Check if a row is selected in both tables
+    if (selectedRowClient != -1 && selectedRowFacture != -1) {
+        // Get the table models
+        DefaultTableModel clientModel = (DefaultTableModel) jTableClient.getModel();
+        DefaultTableModel factureModel = (DefaultTableModel) jTableLigneFacture1.getModel();
 
-                // Requête d'insertion
-                String query = "INSERT INTO facturevente (nomClient, adressenclient, numfacture, date, numLigne, nomArticle, libelle, prixU, qte, prixT) " +
+        // Get selected client data
+        String nomClient = clientModel.getValueAt(selectedRowClient, 0).toString();
+        String adresseClient = clientModel.getValueAt(selectedRowClient, 1).toString();
+
+        // Get selected facture data
+        String numFact = factureModel.getValueAt(selectedRowFacture, 0).toString();
+        String dateF = factureModel.getValueAt(selectedRowFacture, 1).toString();
+        String numLigne = factureModel.getValueAt(selectedRowFacture, 2).toString();
+        String nomArt = factureModel.getValueAt(selectedRowFacture, 3).toString();
+        String libelle = factureModel.getValueAt(selectedRowFacture, 4).toString();
+        String prixU = factureModel.getValueAt(selectedRowFacture, 5).toString();
+        String qte = factureModel.getValueAt(selectedRowFacture, 6).toString();
+        String prixT = factureModel.getValueAt(selectedRowFacture, 7).toString();
+
+        try {
+            // Database connection details
+            String url = "jdbc:mysql://localhost:3306/stock_manager";
+            String login = "root";
+            String pwd = "";
+
+            // Connect to the database
+            try (Connection conn = DriverManager.getConnection(url, login, pwd)) {
+                // SQL query with placeholders
+                String query = "INSERT INTO facturevente (nomClient, adresseClient, numFacture, date, numLigne, numArticle, libelle, prixU, qte, prixT) " +
                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                PreparedStatement pst = conn.prepareStatement(query);
+                                
+                // Use PreparedStatement to fill in values
+                try (PreparedStatement pst = conn.prepareStatement(query)) {
+                    pst.setString(1, nomClient);
+                    pst.setString(2, adresseClient);
+                    pst.setString(3, numFact);
+                    pst.setString(4, dateF);
+                    pst.setString(5, numLigne);
+                    pst.setString(6, nomArt);
+                    pst.setString(7, libelle);
+                    pst.setString(8, prixU);
+                    pst.setString(9, qte);
+                    pst.setString(10, prixT);
 
-                // Remplir les paramètres de la requête
-                pst.setString(1, nomClient);
-                pst.setString(2, adresseClient);
+                    // Execute the query
+                    int rowsInserted = pst.executeUpdate();
+                    if (rowsInserted > 0) {
+                        JOptionPane.showMessageDialog(this, "Facture Vente ajoutée avec succès !");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Erreur lors de l'ajout de la facture.", "Erreur", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Erreur de connexion à la base de données : " + ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Veuillez sélectionner une ligne dans les deux tableaux.", "Erreur", JOptionPane.ERROR_MESSAGE);
+    }
+
+    }//GEN-LAST:event_jButtonValiderFVActionPerformed
+
+    private void jButtonExitFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitFVActionPerformed
+        this.dispose();
+      MainUIStock mainUIStock = new MainUIStock();
+      mainUIStock.setVisible(true);
+    }//GEN-LAST:event_jButtonExitFVActionPerformed
+
+    private void jButtonRefreshFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefreshFourActionPerformed
+        try {
+    String url = "jdbc:mysql://localhost:3306/stock_manager";
+    String login = "root";
+    String pwd = "";
+
+    // Load the MySQL JDBC Driver
+    Class.forName("com.mysql.jdbc.Driver");
+
+    // Establish the connection
+    try (Connection conn = DriverManager.getConnection(url, login, pwd)) {
+        System.out.println("Connexion réussie");
+
+        // Query for client data
+        String clientQuery = "SELECT nomFour, adresseFour FROM fournisseur";
+        String factureQuery = "SELECT numfact, date, numLigne, nomArt, libelle, prixU, qte, prixT FROM facture";
+
+        try (Statement stmt = conn.createStatement()) {
+            // Execute client query
+            try (ResultSet rsClient = stmt.executeQuery(clientQuery)) {
+                DefaultTableModel clientModel = (DefaultTableModel) jTableFournisseur1.getModel();
+                while (rsClient.next()) {
+                    String nomFour = rsClient.getString("nomFour");
+                    String adresseFour = rsClient.getString("adresseFour");
+                    clientModel.addRow(new Object[]{nomFour, adresseFour});
+                }
+            }
+
+            // Execute facture query
+            try (ResultSet rsFacture = stmt.executeQuery(factureQuery)) {
+                DefaultTableModel factureModel = (DefaultTableModel) jTableLigneFacture2.getModel();
+                while (rsFacture.next()) {
+                    String numFact = rsFacture.getString("numfact");
+                    String date = rsFacture.getString("date");
+                    String numLigne = rsFacture.getString("numLigne");
+                    String nomArt = rsFacture.getString("nomArt");
+                    String libelle = rsFacture.getString("libelle");
+                    String prixU = rsFacture.getString("prixU");
+                    String qte = rsFacture.getString("qte");
+                    String prixT = rsFacture.getString("prixT");
+                    factureModel.addRow(new Object[]{numFact, date, numLigne, nomArt, libelle, prixU, qte, prixT});
+                }
+            }
+        }
+    }
+} catch (ClassNotFoundException ex) {
+    Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, "Driver not found", ex);
+} catch (SQLException ex) {
+    Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, "Database error", ex);
+}
+
+    }//GEN-LAST:event_jButtonRefreshFourActionPerformed
+
+    private void jButtonValiderFA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderFA1ActionPerformed
+      int selectedRowFour = jTableFournisseur1.getSelectedRow();
+      int selectedRowFacture = jTableLigneFacture1.getSelectedRow();
+
+// Vérifiez qu'une ligne est sélectionnée dans les deux tableaux
+    if (selectedRowFour != -1 && selectedRowFacture != -1) {
+    
+    
+    // Obtenez les modèles des tableaux
+    DefaultTableModel fourModel = (DefaultTableModel) jTableFournisseur1.getModel();
+    DefaultTableModel factureModel = (DefaultTableModel) jTableLigneFacture1.getModel();
+
+    // Récupérez les données du fournisseur
+    String nomFour = fourModel.getValueAt(selectedRowFour, 0).toString();
+    String adresseFour = fourModel.getValueAt(selectedRowFour, 1).toString();
+
+    // Récupérez les données de la facture
+    String numFact = factureModel.getValueAt(selectedRowFacture, 0).toString();
+    String dateF = factureModel.getValueAt(selectedRowFacture, 1).toString();
+    String numLigne = factureModel.getValueAt(selectedRowFacture, 2).toString();
+    String nomArt = factureModel.getValueAt(selectedRowFacture, 3).toString();
+    String libelle = factureModel.getValueAt(selectedRowFacture, 4).toString();
+    String prixU = factureModel.getValueAt(selectedRowFacture, 5).toString();
+    String qte = factureModel.getValueAt(selectedRowFacture, 6).toString();
+    String prixT = factureModel.getValueAt(selectedRowFacture, 7).toString();
+
+    try {
+        // Connexion à la base de données
+        String url = "jdbc:mysql://localhost:3306/stock_manager";
+        String login = "root";
+        String pwd = "";
+
+        try (Connection conn = DriverManager.getConnection(url, login, pwd)) {
+            String query = "INSERT INTO factureachat (nomFour, adresseFour, numFacture, date, numLigne, numArticle, libelle, prixU, qte, prixT) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try (PreparedStatement pst = conn.prepareStatement(query)) {
+                pst.setString(1, nomFour);
+                pst.setString(2, adresseFour);
                 pst.setString(3, numFact);
                 pst.setString(4, dateF);
                 pst.setString(5, numLigne);
@@ -637,30 +1039,52 @@ public class AfficherFacture extends javax.swing.JFrame {
                 pst.setString(9, qte);
                 pst.setString(10, prixT);
 
-                // Exécuter la requête
                 int rowsInserted = pst.executeUpdate();
                 if (rowsInserted > 0) {
-                    JOptionPane.showMessageDialog(this, "Facture Vente ajoutée avec succès !");
+                    JOptionPane.showMessageDialog(this, "Facture Achat ajoutée avec succès !");
                 } else {
                     JOptionPane.showMessageDialog(this, "Erreur lors de l'ajout de la facture.", "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-
-                // Fermer les ressources
-                pst.close();
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, "Erreur de connexion à la base de données : " + ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une ligne dans le tableau.", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButtonValiderFVActionPerformed
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erreur SQL : " + ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+    }
+} else {
+    JOptionPane.showMessageDialog(this, "Veuillez sélectionner une ligne dans les deux tableaux.", "Erreur", JOptionPane.ERROR_MESSAGE);
+}
 
-    private void jButtonExitFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitFVActionPerformed
+    }//GEN-LAST:event_jButtonValiderFA1ActionPerformed
+
+    private void jButtonExitFV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitFV1ActionPerformed
+         this.dispose();
+      MainUIStock mainUIStock = new MainUIStock();
+      mainUIStock.setVisible(true);
+    }//GEN-LAST:event_jButtonExitFV1ActionPerformed
+
+    private void jButtonVoirTousFactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirTousFactureActionPerformed
+       
+       
+        
+        if (jRadioButtonFactVente.isSelected()) {
+            
+            new jPanelFactureVente().setVisible(true);
+            
+            
+        } else if (jRadioButtonFactAchat.isSelected()) {
+             new jPanelFactureAchat().setVisible(true); // Redirection vers Frame 1
+        
+        } else {
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une option !");
+        }
+    }//GEN-LAST:event_jButtonVoirTousFactureActionPerformed
+
+    private void jButtonExit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExit3ActionPerformed
         this.dispose();
       MainUIStock mainUIStock = new MainUIStock();
       mainUIStock.setVisible(true);
-    }//GEN-LAST:event_jButtonExitFVActionPerformed
+    }//GEN-LAST:event_jButtonExit3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -701,16 +1125,29 @@ public class AfficherFacture extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtonAnnulerFact;
     private javax.swing.JButton jButtonDateAct;
     private javax.swing.JButton jButtonExit1;
+    private javax.swing.JButton jButtonExit3;
     private javax.swing.JButton jButtonExitFV;
+    private javax.swing.JButton jButtonExitFV1;
     private javax.swing.JButton jButtonRefresh;
     private javax.swing.JButton jButtonRefresh1;
+    private javax.swing.JButton jButtonRefreshFour;
+    private javax.swing.JButton jButtonValiderFA1;
     private javax.swing.JButton jButtonValiderFV;
     private javax.swing.JButton jButtonValiderFact;
+    private javax.swing.JButton jButtonVoirTousFacture;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -724,14 +1161,26 @@ public class AfficherFacture extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanelFactureVente;
+    private javax.swing.JRadioButton jRadioButtonFactAchat;
+    private javax.swing.JRadioButton jRadioButtonFactVente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTableClient;
+    private javax.swing.JTable jTableFactureAffiVente;
+    private javax.swing.JTable jTableFournisseur1;
     private javax.swing.JTable jTableLigneFacture;
     private javax.swing.JTable jTableLigneFacture1;
+    private javax.swing.JTable jTableLigneFacture2;
     private javax.swing.JTextField jTextFieldDateFact;
     private javax.swing.JTextField jTextFieldNumFact;
+    private javax.swing.JTextField jTextFieldNumFactureAfficher;
     // End of variables declaration//GEN-END:variables
 }
