@@ -59,13 +59,6 @@ public class GererArticle extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButtonRefresh = new javax.swing.JButton();
         jButtonExit1 = new javax.swing.JButton();
-        jPanelSupprimerArt = new javax.swing.JPanel();
-        jButtonSupprimerArt = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jButtonExit2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTableArticleSupp = new javax.swing.JTable();
-        jButtonRefreshSupp = new javax.swing.JButton();
         jPanelUpdateArt = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -78,6 +71,13 @@ public class GererArticle extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButtonArticleRech = new javax.swing.JButton();
         jTextFieldArticleModRech = new javax.swing.JTextField();
+        jPanelSupprimerArt = new javax.swing.JPanel();
+        jButtonSupprimerArt = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jButtonExit2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableArticleSupp = new javax.swing.JTable();
+        jButtonRefreshSupp = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -123,9 +123,13 @@ public class GererArticle extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        jTabbedPane1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Numero d'article:");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Libelle:");
 
@@ -145,7 +149,7 @@ public class GererArticle extends javax.swing.JFrame {
             }
         });
 
-        jButtonExit.setBackground(new java.awt.Color(204, 0, 0));
+        jButtonExit.setBackground(new java.awt.Color(255, 51, 51));
         jButtonExit.setText("Exit");
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +157,7 @@ public class GererArticle extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Ajouter Un Article");
 
@@ -161,47 +165,47 @@ public class GererArticle extends javax.swing.JFrame {
         jPanelAjouterArt.setLayout(jPanelAjouterArtLayout);
         jPanelAjouterArtLayout.setHorizontalGroup(
             jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAjouterArtLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonExit)
-                .addGap(14, 14, 14))
+            .addGroup(jPanelAjouterArtLayout.createSequentialGroup()
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addComponent(jButtonExit))
             .addGroup(jPanelAjouterArtLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonAnnuler)
                     .addGroup(jPanelAjouterArtLayout.createSequentialGroup()
-                        .addComponent(jButtonAnnuler)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonAjouter))
-                    .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldNumArt)
-                        .addComponent(jTextFieldLibelle, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)))
-                .addContainerGap(106, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonAjouter)
+                            .addComponent(jTextFieldLibelle, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAjouterArtLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldNumArt, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelAjouterArtLayout.setVerticalGroup(
             jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAjouterArtLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldNumArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextFieldLibelle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(jLabel8)
+                    .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNumArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(24, 24, 24)
+                .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldLibelle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(26, 26, 26)
                 .addGroup(jPanelAjouterArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAjouter)
                     .addComponent(jButtonAnnuler))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ajouter Article", jPanelAjouterArt);
@@ -216,10 +220,13 @@ public class GererArticle extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableListeArticle);
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Liste des Article ");
 
-        jButtonRefresh.setText("Refresh 🔍");
+        jButtonRefresh.setBackground(new java.awt.Color(255, 255, 51));
+        jButtonRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButtonRefresh.setText("Refresh 🔍✔");
         jButtonRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRefreshActionPerformed(evt);
@@ -238,116 +245,43 @@ public class GererArticle extends javax.swing.JFrame {
         jPanelListeArt.setLayout(jPanelListeArtLayout);
         jPanelListeArtLayout.setHorizontalGroup(
             jPanelListeArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanelListeArtLayout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(jButtonRefresh)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 265, Short.MAX_VALUE))
+            .addGroup(jPanelListeArtLayout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                .addComponent(jButtonExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelListeArtLayout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(jButtonRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelListeArtLayout.setVerticalGroup(
             jPanelListeArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelListeArtLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelListeArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonRefresh)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelListeArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
                     .addComponent(jButtonExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonRefresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Liste des Articles", jPanelListeArt);
 
-        jButtonSupprimerArt.setBackground(new java.awt.Color(255, 0, 0));
-        jButtonSupprimerArt.setText("Supprimer");
-        jButtonSupprimerArt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSupprimerArtActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Supprimer un article de la liste ");
-
-        jButtonExit2.setBackground(new java.awt.Color(255, 51, 51));
-        jButtonExit2.setText("Exit");
-        jButtonExit2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExit2ActionPerformed(evt);
-            }
-        });
-
-        jTableArticleSupp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "id", "Num article", "Libelle"
-            }
-        ));
-        jScrollPane2.setViewportView(jTableArticleSupp);
-
-        jButtonRefreshSupp.setText("Refresh 🔍");
-        jButtonRefreshSupp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRefreshSuppActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelSupprimerArtLayout = new javax.swing.GroupLayout(jPanelSupprimerArt);
-        jPanelSupprimerArt.setLayout(jPanelSupprimerArtLayout);
-        jPanelSupprimerArtLayout.setHorizontalGroup(
-            jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
-                    .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
-                        .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSupprimerArtLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonSupprimerArt, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSupprimerArtLayout.createSequentialGroup()
-                                        .addComponent(jButtonRefreshSupp)
-                                        .addGap(162, 162, 162)
-                                        .addComponent(jButtonExit2)))))
-                        .addContainerGap())))
-        );
-        jPanelSupprimerArtLayout.setVerticalGroup(
-            jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonExit2)
-                    .addComponent(jButtonRefreshSupp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButtonSupprimerArt)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Supprimer Article", jPanelSupprimerArt);
-
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Modifier un article ");
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Num Article:");
 
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Libelle:");
 
@@ -375,10 +309,12 @@ public class GererArticle extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Article A modifier:");
 
         jButtonArticleRech.setBackground(new java.awt.Color(255, 255, 102));
+        jButtonArticleRech.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButtonArticleRech.setText("Rechercher 🔍");
         jButtonArticleRech.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -391,64 +327,137 @@ public class GererArticle extends javax.swing.JFrame {
         jPanelUpdateArtLayout.setHorizontalGroup(
             jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
-                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldNumArtMod)
-                    .addComponent(jTextFieldLibelleArtMod)))
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(jButtonExit3))
             .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonExit3)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUpdateArtLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonModifier)
-                .addGap(27, 27, 27)
-                .addComponent(jButtonAnnulerMod)
-                .addGap(144, 144, 144))
-            .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldArticleModRech, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                .addGap(77, 77, 77)
+                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextFieldArticleModRech)
+                    .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
+                        .addComponent(jButtonModifier)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addComponent(jButtonAnnulerMod))
+                    .addComponent(jTextFieldLibelleArtMod, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldNumArtMod, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(43, 43, 43)
                 .addComponent(jButtonArticleRech)
-                .addGap(117, 117, 117))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelUpdateArtLayout.setVerticalGroup(
             jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
-                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelUpdateArtLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jButtonArticleRech)
-                            .addComponent(jTextFieldArticleModRech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUpdateArtLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonExit3)
-                        .addGap(55, 55, 55)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNumArtMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel10)
+                    .addComponent(jButtonExit3))
+                .addGap(23, 23, 23)
+                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldArticleModRech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jButtonArticleRech))
+                .addGap(51, 51, 51)
+                .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jTextFieldNumArtMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldLibelleArtMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addGap(39, 39, 39)
+                .addGap(31, 31, 31)
                 .addGroup(jPanelUpdateArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAnnulerMod)
-                    .addComponent(jButtonModifier))
-                .addContainerGap(323, Short.MAX_VALUE))
+                    .addComponent(jButtonModifier)
+                    .addComponent(jButtonAnnulerMod))
+                .addContainerGap(256, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("UpDate Article", jPanelUpdateArt);
+
+        jButtonSupprimerArt.setBackground(new java.awt.Color(255, 0, 0));
+        jButtonSupprimerArt.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButtonSupprimerArt.setText("Supprimer");
+        jButtonSupprimerArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerArtActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Supprimer un article de la liste ");
+
+        jButtonExit2.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonExit2.setText("Exit");
+        jButtonExit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExit2ActionPerformed(evt);
+            }
+        });
+
+        jTableArticleSupp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "id", "Num article", "Libelle"
+            }
+        ));
+        jScrollPane2.setViewportView(jTableArticleSupp);
+
+        jButtonRefreshSupp.setBackground(new java.awt.Color(255, 255, 51));
+        jButtonRefreshSupp.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButtonRefreshSupp.setText("Refresh 🔍");
+        jButtonRefreshSupp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRefreshSuppActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelSupprimerArtLayout = new javax.swing.GroupLayout(jPanelSupprimerArt);
+        jPanelSupprimerArt.setLayout(jPanelSupprimerArtLayout);
+        jPanelSupprimerArtLayout.setHorizontalGroup(
+            jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
+                .addGap(263, 263, 263)
+                .addComponent(jButtonRefreshSupp)
+                .addGap(63, 63, 63)
+                .addComponent(jButtonSupprimerArt)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
+                        .addComponent(jButtonExit2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanelSupprimerArtLayout.setVerticalGroup(
+            jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSupprimerArtLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jButtonExit2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelSupprimerArtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonRefreshSupp)
+                    .addComponent(jButtonSupprimerArt))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133))
+        );
+
+        jTabbedPane1.addTab("Supprimer Article", jPanelSupprimerArt);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

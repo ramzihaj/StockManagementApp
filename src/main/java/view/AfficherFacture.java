@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,9 +33,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        ButtonGroup1 group = new ButtonGroup1();
-        group.add(jRadioButtonFactVente);
-        group.add(jRadioButtonFactAchat);
+        
     }
 
     /**
@@ -90,19 +89,22 @@ public class AfficherFacture extends javax.swing.JFrame {
         jButtonRefreshFour = new javax.swing.JButton();
         jButtonValiderFA1 = new javax.swing.JButton();
         jButtonExitFV1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jButtonVoirTousFacturesVentes1 = new javax.swing.JButton();
+        jTextFieldNumFactureVenteAfficher1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jButtonExit4 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTableFactVenteAff1 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jButtonVoirTousFacture = new javax.swing.JButton();
-        jRadioButtonFactVente = new javax.swing.JRadioButton();
-        jRadioButtonFactAchat = new javax.swing.JRadioButton();
-        jTextFieldNumFactureAfficher = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        jButtonVoirTousFacturesAchats = new javax.swing.JButton();
+        jTextFieldNumFactureAchatAfficher = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jPanelFactureVente = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTableFactureAffiVente = new javax.swing.JTable();
         jButtonExit3 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTableFactAchtAff = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,8 +122,10 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1321, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1071, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,9 +148,8 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,6 +171,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         jLabel6.setText("Date ");
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Ligne Facture");
 
         jButtonDateAct.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -191,7 +195,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableLigneFacture);
 
-        jButtonExit1.setBackground(new java.awt.Color(255, 102, 102));
+        jButtonExit1.setBackground(new java.awt.Color(255, 0, 0));
         jButtonExit1.setText("Exit");
         jButtonExit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +203,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonValiderFact.setBackground(new java.awt.Color(51, 255, 51));
         jButtonValiderFact.setText("Valider");
         jButtonValiderFact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +211,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonAnnulerFact.setBackground(new java.awt.Color(255, 102, 102));
         jButtonAnnulerFact.setText("Annuler");
         jButtonAnnulerFact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +219,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonRefresh.setBackground(new java.awt.Color(255, 255, 51));
         jButtonRefresh.setText("Refresh 🔍");
         jButtonRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,73 +231,71 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jButtonValiderFact)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonAnnulerFact))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jButtonValiderFact)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonAnnulerFact))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonDateAct, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jTextFieldDateFact, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldNumFact)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(43, 43, 43)))
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldDateFact, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(33, 33, 33)))))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addGap(116, 116, 116)
-                        .addComponent(jButtonRefresh)
-                        .addGap(159, 159, 159))))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNumFact, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jButtonRefresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButtonExit1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel11)
+                    .addComponent(jButtonExit1)
                     .addComponent(jButtonRefresh))
+                .addGap(16, 16, 16)
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNumFact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDateFact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldDateFact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldNumFact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonDateAct)
-                        .addGap(52, 52, 52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonAnnulerFact)
-                            .addComponent(jButtonValiderFact)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(244, Short.MAX_VALUE))
+                            .addComponent(jButtonValiderFact)
+                            .addComponent(jButtonAnnulerFact))
+                        .addGap(95, 95, 95))))
         );
 
         jTabbedPane1.addTab("Ajouter une Facture", jPanel3);
@@ -300,9 +305,11 @@ public class AfficherFacture extends javax.swing.JFrame {
         jLabel7.setText("Sélectionnez le client pour lequel afficher la facture");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Client ");
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Facture");
 
         jTableClient.setModel(new javax.swing.table.DefaultTableModel(
@@ -331,6 +338,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTableLigneFacture1);
 
+        jButtonRefresh1.setBackground(new java.awt.Color(255, 255, 102));
         jButtonRefresh1.setText("Refresh 🔍");
         jButtonRefresh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -338,6 +346,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonValiderFV.setBackground(new java.awt.Color(102, 255, 0));
         jButtonValiderFV.setText("Valider");
         jButtonValiderFV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,6 +354,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonExitFV.setBackground(new java.awt.Color(255, 0, 0));
         jButtonExitFV.setText("Exit");
         jButtonExitFV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -357,48 +367,45 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE))
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
-                        .addComponent(jButtonRefresh1)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButtonValiderFV)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonExitFV)
-                .addGap(47, 47, 47))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(jButtonRefresh1)
+                                .addGap(44, 44, 44)
+                                .addComponent(jButtonValiderFV)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 416, Short.MAX_VALUE)
+                                .addComponent(jButtonExitFV)
+                                .addContainerGap())
+                            .addComponent(jScrollPane4)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonRefresh1)
-                            .addComponent(jButtonValiderFV)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButtonExitFV)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonExitFV)
+                    .addComponent(jButtonRefresh1)
+                    .addComponent(jButtonValiderFV))
+                .addGap(52, 52, 52)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -412,9 +419,11 @@ public class AfficherFacture extends javax.swing.JFrame {
         jLabel10.setText("Sélectionnez le fournisseur pour lequel afficher la facture");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Fournisseur");
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Facture");
 
         jTableFournisseur1.setModel(new javax.swing.table.DefaultTableModel(
@@ -443,6 +452,7 @@ public class AfficherFacture extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTableLigneFacture2);
 
+        jButtonRefreshFour.setBackground(new java.awt.Color(255, 255, 51));
         jButtonRefreshFour.setText("Refresh 🔍");
         jButtonRefreshFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -450,6 +460,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonValiderFA1.setBackground(new java.awt.Color(102, 255, 51));
         jButtonValiderFA1.setText("Valider");
         jButtonValiderFA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,6 +468,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jButtonExitFV1.setBackground(new java.awt.Color(255, 0, 0));
         jButtonExitFV1.setText("Exit");
         jButtonExitFV1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -469,26 +481,29 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonExitFV1))
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(312, 312, 312)
+                                .addComponent(jButtonRefreshFour)
+                                .addGap(45, 45, 45)
+                                .addComponent(jButtonValiderFA1)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane5))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addComponent(jButtonRefreshFour)
-                .addGap(45, 45, 45)
-                .addComponent(jButtonValiderFA1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
-                .addComponent(jButtonExitFV1)
-                .addGap(47, 47, 47))
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,12 +513,12 @@ public class AfficherFacture extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRefreshFour)
-                    .addComponent(jButtonValiderFA1)
-                    .addComponent(jButtonExitFV1))
+                    .addComponent(jButtonValiderFA1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(jButtonExitFV1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
@@ -515,52 +530,41 @@ public class AfficherFacture extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1321, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 243, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 244, Short.MAX_VALUE)))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 532, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ajouter une Facture d'achat", jPanel5);
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Sélectionner le type de facture ");
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Tous les factures de ventes");
 
-        jButtonVoirTousFacture.setBackground(new java.awt.Color(102, 255, 102));
-        jButtonVoirTousFacture.setText("Voir");
-        jButtonVoirTousFacture.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVoirTousFacturesVentes1.setBackground(new java.awt.Color(102, 255, 102));
+        jButtonVoirTousFacturesVentes1.setText("Voir");
+        jButtonVoirTousFacturesVentes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVoirTousFactureActionPerformed(evt);
+                jButtonVoirTousFacturesVentes1ActionPerformed(evt);
             }
         });
 
-        jRadioButtonFactVente.setText("Facture de Vente");
-
-        jRadioButtonFactAchat.setText("Facture d'Achat");
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel15.setText("Type de Facture");
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel16.setText("Numero Facture");
-
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Facture de vente");
+        jLabel17.setText("Numero Facture");
 
-        jTableFactureAffiVente.setModel(new javax.swing.table.DefaultTableModel(
+        jButtonExit4.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonExit4.setText("Exit");
+        jButtonExit4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExit4ActionPerformed(evt);
+            }
+        });
+
+        jTableFactVenteAff1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -568,34 +572,67 @@ public class AfficherFacture extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID_FactVente", "Nom Client", "Adresse ", "Numero Facture", "Date", "Num Ligne", "Num Article", "Libelle", "Prix Unitaire", "Qte", "Prix Totale"
+                "ID Facture  Vente", "Nom Client", "Adresse Client", "Num Facture", "Date", "Num Ligne", "Num Article", "Libelle", "Prix Unitaire", "Qte", "Prix Totale"
             }
         ));
-        jScrollPane6.setViewportView(jTableFactureAffiVente);
+        jScrollPane8.setViewportView(jTableFactVenteAff1);
 
-        javax.swing.GroupLayout jPanelFactureVenteLayout = new javax.swing.GroupLayout(jPanelFactureVente);
-        jPanelFactureVente.setLayout(jPanelFactureVenteLayout);
-        jPanelFactureVenteLayout.setHorizontalGroup(
-            jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelFactureVenteLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
-                    .addContainerGap()))
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldNumFactureVenteAfficher1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(243, 243, 243)
+                                .addComponent(jButtonVoirTousFacturesVentes1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonExit4)))
+                .addContainerGap())
         );
-        jPanelFactureVenteLayout.setVerticalGroup(
-            jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelFactureVenteLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel17)
-                .addContainerGap(393, Short.MAX_VALUE))
-            .addGroup(jPanelFactureVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFactureVenteLayout.createSequentialGroup()
-                    .addContainerGap(53, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonExit4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNumFactureVenteAfficher1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonVoirTousFacturesVentes1))
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
+
+        jTabbedPane1.addTab("Afficher  les factures de ventes", jPanel8);
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Tous les factures d'achats");
+
+        jButtonVoirTousFacturesAchats.setBackground(new java.awt.Color(102, 255, 102));
+        jButtonVoirTousFacturesAchats.setText("Voir");
+        jButtonVoirTousFacturesAchats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoirTousFacturesAchatsActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel16.setText("Numero Facture");
 
         jButtonExit3.setBackground(new java.awt.Color(255, 51, 51));
         jButtonExit3.setText("Exit");
@@ -605,76 +642,75 @@ public class AfficherFacture extends javax.swing.JFrame {
             }
         });
 
+        jTableFactAchtAff.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Facture  Achat", "Nom Four", "Adresse Four", "Num Facture", "Date", "Num Ligne", "Num Article", "Libelle", "Prix Unitaire", "Qte", "Prix Totale"
+            }
+        ));
+        jScrollPane7.setViewportView(jTableFactAchtAff);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldNumFactureAchatAfficher, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(179, 179, 179)
+                        .addComponent(jButtonVoirTousFacturesAchats, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonExit3))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButtonFactVente)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextFieldNumFactureAfficher, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jRadioButtonFactAchat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(42, 42, 42)
-                        .addComponent(jPanelFactureVente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jButtonVoirTousFacture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 750, Short.MAX_VALUE)
-                        .addComponent(jButtonExit3)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 877, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(191, 191, 191)))
+                .addGap(139, 139, 139))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jRadioButtonFactVente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButtonFactAchat))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldNumFactureAfficher, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                        .addGap(39, 39, 39)
+                        .addComponent(jButtonExit3))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addContainerGap()
+                        .addComponent(jLabel14)
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonVoirTousFacture)
-                            .addComponent(jButtonExit3))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanelFactureVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jTextFieldNumFactureAchatAfficher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonVoirTousFacturesAchats))))
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Afficher Tous les factures", jPanel7);
+        jTabbedPane1.addTab("Afficher  les factures d'achats", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1321, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 3, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -686,7 +722,7 @@ public class AfficherFacture extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 606, Short.MAX_VALUE)))
+                    .addGap(0, 488, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1058,33 +1094,100 @@ public class AfficherFacture extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonValiderFA1ActionPerformed
 
     private void jButtonExitFV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitFV1ActionPerformed
-         this.dispose();
+      this.dispose();
       MainUIStock mainUIStock = new MainUIStock();
       mainUIStock.setVisible(true);
     }//GEN-LAST:event_jButtonExitFV1ActionPerformed
 
-    private void jButtonVoirTousFactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirTousFactureActionPerformed
+    private void jButtonVoirTousFacturesAchatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirTousFacturesAchatsActionPerformed
        
-       
-        
-        if (jRadioButtonFactVente.isSelected()) {
-            
-            new jPanelFactureVente().setVisible(true);
-            
-            
-        } else if (jRadioButtonFactAchat.isSelected()) {
-             new jPanelFactureAchat().setVisible(true); // Redirection vers Frame 1
-        
-        } else {
-            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une option !");
-        }
-    }//GEN-LAST:event_jButtonVoirTousFactureActionPerformed
+           
+
+         String url = "jdbc:mysql://localhost:3306/stock_manager";
+         String login = "root";
+         String pwd = "";
+             
+         try (
+             Connection conn = DriverManager.getConnection(url, login, pwd);
+             Statement st = conn.createStatement();
+             ResultSet rs = st.executeQuery(
+                 "SELECT `id_factureachat`, `nomFour`, `adresseFour`, `numFacture`, `date`, `numLigne`, `numArticle`, `libelle`, `prixU`, `qte`, `prixT` FROM `factureachat`"
+             )
+         ) {
+             System.out.println("Connexion réussie");
+
+             DefaultTableModel model = (DefaultTableModel) jTableFactAchtAff.getModel();
+
+             while (rs.next()) {
+                 model.addRow(new Object[]{
+                     rs.getString("id_factureachat"),
+                     rs.getString("nomFour"),
+                     rs.getString("adresseFour"),
+                     rs.getString("numFacture"),
+                     rs.getString("date"),
+                     rs.getString("numLigne"),
+                     rs.getString("numArticle"),
+                     rs.getString("libelle"),
+                     rs.getString("prixU"),
+                     rs.getString("qte"),
+                     rs.getString("prixT")
+                 });
+             }
+         } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(this, "Erreur lors de la connexion à la base de données: " + ex.getMessage());
+             Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
+         }
+     
+
+    }//GEN-LAST:event_jButtonVoirTousFacturesAchatsActionPerformed
 
     private void jButtonExit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExit3ActionPerformed
-        this.dispose();
+      this.dispose();
       MainUIStock mainUIStock = new MainUIStock();
       mainUIStock.setVisible(true);
     }//GEN-LAST:event_jButtonExit3ActionPerformed
+
+    private void jButtonVoirTousFacturesVentes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirTousFacturesVentes1ActionPerformed
+         String url = "jdbc:mysql://localhost:3306/stock_manager";
+         String login = "root";
+         String pwd = "";
+             
+         try (
+             Connection conn = DriverManager.getConnection(url, login, pwd);
+             Statement st = conn.createStatement();
+             ResultSet rs = st.executeQuery(
+                 "SELECT `id_facturevente`, `nomClient`, `adresseClient`, `numFacture`, `date`, `numLigne`, `numArticle`, `libelle`, `prixU`, `qte`, `prixT` FROM `facturevente`"
+             )
+         ) {
+             System.out.println("Connexion réussie");
+
+             DefaultTableModel model = (DefaultTableModel) jTableFactVenteAff1.getModel();
+
+             while (rs.next()) {
+                 model.addRow(new Object[]{
+                     rs.getString("id_facturevente"),
+                     rs.getString("nomClient"),
+                     rs.getString("adresseClient"),
+                     rs.getString("numFacture"),
+                     rs.getString("date"),
+                     rs.getString("numLigne"),
+                     rs.getString("numArticle"),
+                     rs.getString("libelle"),
+                     rs.getString("prixU"),
+                     rs.getString("qte"),
+                     rs.getString("prixT")
+                 });
+             }
+         } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(this, "Erreur lors de la connexion à la base de données: " + ex.getMessage());
+             Logger.getLogger(AfficherFacture.class.getName()).log(Level.SEVERE, null, ex);
+         }
+     
+    }//GEN-LAST:event_jButtonVoirTousFacturesVentes1ActionPerformed
+
+    private void jButtonExit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExit4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonExit4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1130,6 +1233,7 @@ public class AfficherFacture extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDateAct;
     private javax.swing.JButton jButtonExit1;
     private javax.swing.JButton jButtonExit3;
+    private javax.swing.JButton jButtonExit4;
     private javax.swing.JButton jButtonExitFV;
     private javax.swing.JButton jButtonExitFV1;
     private javax.swing.JButton jButtonRefresh;
@@ -1138,7 +1242,8 @@ public class AfficherFacture extends javax.swing.JFrame {
     private javax.swing.JButton jButtonValiderFA1;
     private javax.swing.JButton jButtonValiderFV;
     private javax.swing.JButton jButtonValiderFact;
-    private javax.swing.JButton jButtonVoirTousFacture;
+    private javax.swing.JButton jButtonVoirTousFacturesAchats;
+    private javax.swing.JButton jButtonVoirTousFacturesVentes1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1163,24 +1268,47 @@ public class AfficherFacture extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanelFactureVente;
-    private javax.swing.JRadioButton jRadioButtonFactAchat;
-    private javax.swing.JRadioButton jRadioButtonFactVente;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTableClient;
-    private javax.swing.JTable jTableFactureAffiVente;
+    private javax.swing.JTable jTableFactAchtAff;
+    private javax.swing.JTable jTableFactVenteAff1;
     private javax.swing.JTable jTableFournisseur1;
     private javax.swing.JTable jTableLigneFacture;
     private javax.swing.JTable jTableLigneFacture1;
     private javax.swing.JTable jTableLigneFacture2;
     private javax.swing.JTextField jTextFieldDateFact;
     private javax.swing.JTextField jTextFieldNumFact;
-    private javax.swing.JTextField jTextFieldNumFactureAfficher;
+    private javax.swing.JTextField jTextFieldNumFactureAchatAfficher;
+    private javax.swing.JTextField jTextFieldNumFactureVenteAfficher1;
     // End of variables declaration//GEN-END:variables
+
+   
+
+    private static class jPanelFactureAchat {
+
+        public jPanelFactureAchat() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
+
+    private static class jPanelFactureVente {
+
+        public jPanelFactureVente() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
 }

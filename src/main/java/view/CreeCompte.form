@@ -58,7 +58,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel2" alignment="0" pref="502" max="32767" attributes="0"/>
+              <Component id="jLabel2" alignment="0" pref="1074" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -133,7 +133,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonExit" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel5" max="32767" attributes="0"/>
                       <Component id="jLabel6" max="32767" attributes="0"/>
@@ -142,20 +142,21 @@
                       <Component id="jLabel9" pref="231" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextFieldNom" max="32767" attributes="0"/>
-                      <Component id="jTextFieldPrenom" max="32767" attributes="0"/>
-                      <Component id="jTextFieldEmail" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jTextFieldPassword" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jTextFieldPasswordConfirmer" alignment="1" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jButtonConfirmer" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="204" max="32767" attributes="0"/>
+                          <Component id="jButtonAnnuler" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jTextFieldPassword" alignment="0" pref="384" max="32767" attributes="0"/>
+                          <Component id="jTextFieldEmail" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldPrenom" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldNom" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldPasswordConfirmer" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButtonAnnuler" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButtonConfirmer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <EmptySpace min="19" pref="441" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -191,12 +192,12 @@
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldPasswordConfirmer" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonConfirmer" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonAnnuler" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonConfirmer" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="135" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -10,6 +10,7 @@ view\GererClient$5.class
 view\GestionStockUI$1.class
 view\MainUIStock$buttonGroupGerer.class
 view\MainUIStock$1.class
+view\AfficherFacture$16.class
 view\GererArticle$4.class
 view\GererFournisseur$10.class
 view\AfficherFacture$6.class
@@ -69,6 +70,7 @@ view\GererFournisseur$11.class
 model\Facture.class
 view\AfficherLigneFacture.class
 controller\OperationFacture.class
+view\AfficherFacture$15.class
 view\GererFournisseur$6.class
 model\FactureVente.class
 view\CreeCompte$2.class
@@ -82,6 +84,7 @@ view\GererFournisseur$14.class
 view\AfficherFacture$12.class
 view\AfficherLigneFacture$11.class
 model\Client.class
+view\AfficherFacture$14.class
 view\GererArticle$5.class
 view\AfficherFacture$7.class
 view\GererFournisseur$5.class
@@ -93,9 +96,12 @@ view\GererClient$3.class
 model\LigneFacture.class
 view\GererClient$2.class
 view\GererFournisseur$4.class
+view\AfficherFacture$13.class
+view\AfficherFacture$jPanelFactureAchat.class
 com\mycompany\gestionstock\GestionStock.class
 view\AfficherLigneFacture$2.class
 view\GererClient$9.class
+view\AfficherFacture$jPanelFactureVente.class
 model\Fournisseur.class
 view\GererArticle$6.class
 view\AfficherLigneFacture$9.class
